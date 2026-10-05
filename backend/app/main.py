@@ -128,10 +128,25 @@ Practices:
 
 EDUCATION
 
+Chandigarh University (CU), Mohali, India
+M.E. in Computer Science and Engineering (Data Science)
+CGPA: N/A
+August 2026 - Present
+
 Vellore Institute of Technology (VIT), Vellore, India
 B.Tech in Computer Science and Engineering
 CGPA: 7.22
 September 2021 - November 2025
+
+Indira Gandhi Memorial High School, Kolkata, India
+Class XII (CBSE)
+79.8%
+March 2021 
+
+Indira Gandhi Memorial High School, Kolkata, India
+Class X (CBSE)
+85.8%
+March 2019
 
 
 EXPERIENCE
