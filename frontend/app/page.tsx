@@ -21,8 +21,7 @@ import {
 } from "lucide-react";
 import { profile } from "@/data/profile";
 
-const API =
-  process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
+const API = "https://prantik-portfolio-api.onrender.com";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
