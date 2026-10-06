@@ -4,8 +4,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
-from google import genai
-from google.genai import types
+from groq import Groq
 
 
 # Load variables from backend/.env
@@ -26,8 +25,6 @@ app = FastAPI(
 # CORS
 # --------------------------------------------------
 
-# Allow the Next.js development server to communicate
-# with the FastAPI backend.
 origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
@@ -44,7 +41,7 @@ app.add_middleware(
 
 
 # --------------------------------------------------
-# Portfolio information for Gemini
+# Portfolio information for AI
 # --------------------------------------------------
 
 PROFILE_CONTEXT = """
@@ -142,7 +139,7 @@ September 2021 - November 2025
 Indira Gandhi Memorial High School, Kolkata, India
 Class XII (CBSE)
 79.8%
-March 2021 
+March 2021
 
 Indira Gandhi Memorial High School, Kolkata, India
 Class X (CBSE)
@@ -239,43 +236,47 @@ def profile():
 
 
 # --------------------------------------------------
-# Gemini AI Chat
+# Groq AI Chat
 # --------------------------------------------------
 
 @app.post("/api/chat")
 def chat(body: ChatRequest):
 
-    # Get Gemini API key from backend/.env
-    key = os.getenv("GEMINI_API_KEY")
+    # Get Groq API key from environment
+    key = os.getenv("GROQ_API_KEY")
 
     # Check whether the API key exists
     if not key:
         return {
             "answer": (
                 "AI mode is not configured yet. "
-                "Please configure the Gemini API key."
+                "Please configure the Groq API key."
             )
         }
 
     try:
-        # Create Gemini client
-        client = genai.Client(
-            api_key=key
+        # Create Groq client
+        client = Groq(api_key=key)
+
+        # Send request to Groq
+        response = client.chat.completions.create(
+            model="openai/gpt-oss-20b",
+            messages=[
+                {
+                    "role": "system",
+                    "content": PROFILE_CONTEXT,
+                },
+                {
+                    "role": "user",
+                    "content": body.message,
+                },
+            ],
+            temperature=0.2,
+            max_tokens=350,
         )
 
-        # Send request to Gemini
-        response = client.models.generate_content(
-            model="gemini-2.5-flash-lite",
-            contents=body.message,
-            config=types.GenerateContentConfig(
-                system_instruction=PROFILE_CONTEXT,
-                temperature=0.2,
-                max_output_tokens=350,
-            ),
-        )
-
-        # Get Gemini response
-        answer = response.text
+        # Get AI response
+        answer = response.choices[0].message.content
 
         return {
             "answer": answer
@@ -284,8 +285,8 @@ def chat(body: ChatRequest):
 
     except Exception as e:
 
-        # Print the real error in the backend terminal
-        print(f"Gemini API error: {e}")
+        # Print real error in Render logs
+        print(f"Groq API error: {e}")
 
         # Don't expose technical details to visitors
         return {
