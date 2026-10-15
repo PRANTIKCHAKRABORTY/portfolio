@@ -474,20 +474,63 @@ export default function Home() {
       <Section
         id="blog"
         eyebrow="Blog & Writing"
-        title="Notes on building and learning."
+        title="Ideas worth exploring."
       >
-        <div className="glass rounded-3xl border border-white/[.07] p-7 md:p-9">
-          <div className="flex items-start gap-4">
-            <div className="rounded-2xl border border-cyan-300/15 bg-cyan-300/[.06] p-3">
-              <Code2 className="h-5 w-5 text-cyan-300" />
+        <div className="grid gap-5 md:grid-cols-2">
+          <motion.a
+            href="https://medium.com/@IEEE_Computer_Society_VIT/neuromorphic-hardware-and-computing-f7cc8f71ed58"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            whileHover={{ y: -6 }}
+            className="glass group relative block overflow-hidden rounded-3xl p-7 transition-shadow hover:shadow-2xl hover:shadow-cyan-950/20 focus:outline-none focus:ring-2 focus:ring-cyan-300/60"
+          >
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/50 to-transparent opacity-0 transition group-hover:opacity-100" />
+            <div className="flex items-center justify-between">
+              <span className="font-mono text-sm text-white/25">01</span>
+              <ExternalLink className="h-5 w-5 text-cyan-300/70" />
             </div>
-            <div>
-              <h3 className="text-lg font-bold">Articles coming soon</h3>
-              <p className="mt-2 max-w-3xl text-sm leading-7 text-white/50">
-                Technical articles and notes on backend development, data engineering, APIs, and practical AI will appear here.
-              </p>
+            <h3 className="mt-8 text-2xl font-bold transition group-hover:text-cyan-100">
+              Neuromorphic Hardware and Computing
+            </h3>
+            <p className="mt-3 leading-7 text-white/55">
+              An article exploring neuromorphic hardware and computing.
+            </p>
+            <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-4">
+              <span className="text-sm font-semibold text-cyan-300">Read on Medium</span>
+              <ArrowUpRight className="h-4 w-4 text-white/35 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </div>
-          </div>
+          </motion.a>
+
+          <motion.a
+            href="https://medium.com/@IEEE_Computer_Society_VIT/internet-of-behaviour-iob-224fdb79a154"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ delay: 0.05 }}
+            whileHover={{ y: -6 }}
+            className="glass group relative block overflow-hidden rounded-3xl p-7 transition-shadow hover:shadow-2xl hover:shadow-cyan-950/20 focus:outline-none focus:ring-2 focus:ring-cyan-300/60"
+          >
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/50 to-transparent opacity-0 transition group-hover:opacity-100" />
+            <div className="flex items-center justify-between">
+              <span className="font-mono text-sm text-white/25">02</span>
+              <ExternalLink className="h-5 w-5 text-cyan-300/70" />
+            </div>
+            <h3 className="mt-8 text-2xl font-bold transition group-hover:text-cyan-100">
+              Internet of Behaviour (IoB)
+            </h3>
+            <p className="mt-3 leading-7 text-white/55">
+              An article introducing the Internet of Behaviour (IoB).
+            </p>
+            <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-4">
+              <span className="text-sm font-semibold text-cyan-300">Read on Medium</span>
+              <ArrowUpRight className="h-4 w-4 text-white/35 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </div>
+          </motion.a>
         </div>
       </Section>
 
