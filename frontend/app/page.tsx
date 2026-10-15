@@ -65,7 +65,7 @@ export default function Home() {
     }
   }
 
-  const nav = ["About", "Experience", "Projects", "Skills", "Contact"];
+  const nav = ["About", "Experience", "Projects", "Publications", "Blog", "Skills", "Contact"];
 
   const suggestedQuestions = [
     "What backend technologies does Prantik use?",
@@ -446,6 +446,48 @@ export default function Home() {
               </div>
             </motion.a>
           ))}
+        </div>
+      </Section>
+
+      {/* Publications */}
+      <Section
+        id="publications"
+        eyebrow="Research & Publications"
+        title="Ideas, research, and academic work."
+      >
+        <div className="glass rounded-3xl border border-white/[.07] p-7 md:p-9">
+          <div className="flex items-start gap-4">
+            <div className="rounded-2xl border border-cyan-300/15 bg-cyan-300/[.06] p-3">
+              <Database className="h-5 w-5 text-cyan-300" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold">Publications coming soon</h3>
+              <p className="mt-2 max-w-3xl text-sm leading-7 text-white/50">
+                Research papers, conference publications, and academic work will be listed here when available.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* Blog */}
+      <Section
+        id="blog"
+        eyebrow="Blog & Writing"
+        title="Notes on building and learning."
+      >
+        <div className="glass rounded-3xl border border-white/[.07] p-7 md:p-9">
+          <div className="flex items-start gap-4">
+            <div className="rounded-2xl border border-cyan-300/15 bg-cyan-300/[.06] p-3">
+              <Code2 className="h-5 w-5 text-cyan-300" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold">Articles coming soon</h3>
+              <p className="mt-2 max-w-3xl text-sm leading-7 text-white/50">
+                Technical articles and notes on backend development, data engineering, APIs, and practical AI will appear here.
+              </p>
+            </div>
+          </div>
         </div>
       </Section>
 
