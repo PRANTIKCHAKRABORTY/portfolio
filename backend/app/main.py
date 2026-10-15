@@ -196,6 +196,29 @@ CERTIFICATIONS AND LEADERSHIP
 - IBM Data Analyst — Coursera (2026)
 - Complete Full-Stack Web Development Bootcamp — Udemy (2025)
 - R&D Head, IEEE Computer Society — VIT (2024)
+
+
+BLOGS
+
+1. Neuromorphic Hardware and Computing
+URL: https://medium.com/@IEEE_Computer_Society_VIT/neuromorphic-hardware-and-computing-f7cc8f71ed58
+
+2. Internet of Behaviour (IoB)
+URL: https://medium.com/@IEEE_Computer_Society_VIT/internet-of-behaviour-iob-224fdb79a154
+
+When asked about Prantik's blogs, provide the relevant title and URL above.
+Only describe the article content to the extent supported by the information provided.
+Do not invent article-specific claims, findings, or quotations.
+
+
+RESEARCH AND PUBLICATIONS
+
+No verified research paper titles, journal or conference names, publication dates,
+DOI links, or research findings have been provided in this context.
+
+If asked about Prantik's research papers or publications, say that verified
+publication details are not currently available. Do not invent papers,
+publication records, authors, journals, conferences, DOIs, or research results.
 """
 
 
